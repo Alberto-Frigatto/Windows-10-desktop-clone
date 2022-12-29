@@ -1,7 +1,5 @@
 # Windows 10 Desktop Clone
 
----
-
 This project recreates the Microsoft Windows 10 desktop for front-end skills training.
 
 ![Project screenshot](./img/Screenshot.png)
