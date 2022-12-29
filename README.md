@@ -27,4 +27,4 @@ To start the project just click on `index.html`.
 ## package dependencies
 
 - jQuery v3.6.5
-- Bootstrap Icons
+- Bootstrap Icons v1.10.3
