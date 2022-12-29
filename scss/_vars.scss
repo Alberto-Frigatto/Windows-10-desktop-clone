@@ -1,0 +1,13 @@
+@use 'sass:color';
+
+$dark-theme: #101010;
+$button-background-hover: color.adjust($dark-theme, $lightness: 10%);
+$accent-color: #32e3c5;
+
+$font-color: #fff;
+$font-url: 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap';
+$primary-font: 'Lato';
+$secondary-fonts: arial, helvetica, sans-serif;
+
+$desktop-cell-width: calc(100vw / 18);
+$desktop-cell-height: calc((100vh - 4.5rem) / 7);

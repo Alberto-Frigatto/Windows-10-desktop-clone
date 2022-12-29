@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows 10 desktop Clone</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/index.min.css">
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./js/main.js" defer></script>
+</head>
+<body>
+  <section class="desktop"></section>
+  <section class="taskbar">
+    <button type="button" class="windows-btn">
+      <i class="bi bi-windows"></i>
+    </button>
+    <section class="search-container">
+      <form>
+        <i class="bi bi-search search-icon"></i>
+        <input
+          type="text"
+          class="search-bar"
+          placeholder="Digite aqui para pesquisar"
+        />
+      </form>
+    </section>
+    <section class="apps"></section>
+    <section class="options">
+      <button type="button">
+        <i class="bi bi-chevron-up"></i>
+      </button>
+      <button type="button" id="wifi-btn">
+        <i class="bi bi-wifi"></i>
+      </button>
+      <button type="button">
+        <i class="bi bi-battery-half"></i>
+      </button>
+      <button type="button">
+        <i class="bi bi-volume-up"></i>
+      </button>
+      <button type="button">
+        <span>POR</span>
+        <span>PTB2</span>
+      </button>
+      <button type="button" id="clock-btn"></button>
+      <button type="button" id="nottifications-btn">
+        <i class="bi bi-chat-left-dots-fill"></i>
+      </button>
+    </section>
+  </section>
+</body>
+</html>

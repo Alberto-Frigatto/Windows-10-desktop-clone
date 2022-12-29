@@ -1,0 +1,228 @@
+@use 'sass:color';
+@use './vars';
+@use './mixins';
+
+@import url(vars.$font-url);
+
+*,
+::before,
+::after
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: #{vars.$primary-font}, #{vars.$secondary-fonts};
+}
+
+:focus
+{
+  outline: none;
+}
+
+html
+{
+  font-size: 16px;
+}
+
+html,
+body
+{
+  min-height: 100vh;
+}
+
+body
+{
+  position: relative;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-rows: auto 2.5rem;
+}
+
+.desktop
+{
+  background: {
+    image: url('../img/Desktop_Background.png');
+    size: 100vw 100%;
+  }
+  display: grid;
+  grid-template: {
+    columns: vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width vars.$desktop-cell-width;
+
+    rows: vars.$desktop-cell-height vars.$desktop-cell-height vars.$desktop-cell-height vars.$desktop-cell-height vars.$desktop-cell-height vars.$desktop-cell-height vars.$desktop-cell-height;
+  }
+
+  .shortcut
+  {
+    height: max-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: .4rem;
+    grid-column-start: 1;
+    padding-block: .5rem;
+    cursor: default;
+
+    &-icon-container
+    {
+      position: relative;
+    }
+
+    &-app-icon
+    {
+      width: 3rem;
+    }
+
+    &-arrow-icon
+    {
+      @include mixins.position-bottom-left(absolute);
+    }
+
+    &-name
+    {
+      font-size: .7rem;
+      text-align: center;
+      color: white;
+      text-shadow: 0 0 .2rem black;
+      white-space: pre-line;
+    }
+
+    &:hover
+    {
+      background: rgba(#fff, .3);
+      box-shadow: inset 0 0 0 1px rgba(#fff, .6);
+    }
+  }
+}
+
+%taskbar-btn
+{
+  @include mixins.center;
+  color: vars.$font-color;
+  background: transparent;
+  border: none;
+  padding-inline: .3rem;
+
+  &:hover
+  {
+    background: vars.$button-background-hover;
+  }
+}
+
+.taskbar
+{
+  background: vars.$dark-theme;
+  display: flex;
+
+  .windows-btn
+  {
+    @extend %taskbar-btn;
+    font-size: 1rem;
+    padding-inline: 1rem;
+
+    &:focus-visible
+    {
+      outline: none;
+    }
+
+    &:hover
+    {
+      background: transparent;
+      color: vars.$accent-color;
+    }
+  }
+
+  .search-container
+  {
+    display: flex;
+    box-shadow: inset 0 0 0 1px #6b6b6b;
+    background: #3f3f3f;
+    width: 21.5rem;
+
+    form
+    {
+      display: flex;
+      width: 100%;
+    }
+
+    .search-icon
+    {
+      @include mixins.center;
+      padding-inline: .8rem;
+
+      &::before
+      {
+        transform: rotate(90deg);
+        font-size: .9rem;
+        color: #fff;
+      }
+    }
+
+    .search-bar
+    {
+      flex-grow: 1;
+      font-size: .95rem;
+      letter-spacing: .01rem;
+      background: transparent;
+      border: none;
+
+      &::placeholder
+      {
+        color: color.adjust(vars.$font-color, $lightness: -20%);
+      }
+    }
+
+    &:hover
+    {
+      box-shadow: inset 0 0 0 2px #797979;
+    }
+  }
+
+  .apps
+  {
+    display: flex;
+
+    .app
+    {
+      @extend %taskbar-btn;
+      padding-inline: .8rem;
+      cursor: default;
+
+      img
+      {
+        width: 1.5rem;
+      }
+    }
+  }
+
+  .options
+  {
+    display: flex;
+    margin-left: auto;
+    
+    button
+    {
+      @extend %taskbar-btn;
+      flex-direction: column;
+
+      span
+      {
+        font-size: .8rem;
+      }
+
+      i
+      {
+        font-size: 1.1rem;
+      }
+
+      &#wifi-btn i
+      {
+        transform: rotate(-45deg);
+      }
+
+      &#nottifications-btn
+      {
+        padding-inline: .9rem;
+      }
+    }
+  }
+}
