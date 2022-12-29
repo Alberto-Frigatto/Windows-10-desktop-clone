@@ -6,7 +6,7 @@ This project recreates the Microsoft Windows 10 desktop for front-end skills tra
 
 ![Project screenshot](./img/Screenshot.png)
 
-> ⚠️ This project was developed and will only work in 1366 x 768 resolution
+> ⚠️ This project was developed and will only work in 1366 x 768 resolution in full screen
 
 <br/>
 
