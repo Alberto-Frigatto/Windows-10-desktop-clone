@@ -3,7 +3,8 @@ $(() => {
   let listAppsDesktop = [
     {
       image: 'Dump',
-      name: 'Lixeira'
+      name: 'Lixeira',
+      noArrowIcon: true
     },
     {
       image: 'Chrome',
@@ -32,6 +33,14 @@ $(() => {
   ];
 
   listAppsDesktop.map(app => {
+    arrowIcon = !app.noArrowIcon ? `
+      <img
+        src='./img/Shortcut_Desktop_Icon.png'
+        alt='ícone de atalho'
+        class='shortcut-arrow-icon'
+      />
+    ` : '';
+
     desktop.append(`
       <article class='shortcut'>
         <div class='shortcut-icon-container'>
@@ -40,11 +49,7 @@ $(() => {
             alt='${app.name}'
             class='shortcut-app-icon'
           />
-          <img
-            src='./img/Shortcut_Desktop_Icon.png'
-            alt='ícone de atalho'
-            class='shortcut-arrow-icon'
-          />
+          ${arrowIcon}
         </div>
         <p class='shortcut-name'>${app.name}</p>
       </article>
@@ -70,7 +75,7 @@ $(() => {
     let minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
     let time = `<span>${hours}:${minutes}</span>`;
 
-    let day = date.getDay() < 10 ? `0${date.getDay()}` : date.getDay();
+    let day = date.getDay() < 10 ? `0${date.getDate()}` : date.getDate();
     let month = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
     let year = date.getFullYear();
 
