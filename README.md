@@ -1,7 +1,5 @@
 # Windows 10 Desktop Clone
 
----
-
 This project recreates the Microsoft Windows 10 desktop for front-end skills training.
 
 ![Project screenshot](./img/Screenshot.png)
@@ -17,11 +15,13 @@ This project recreates the Microsoft Windows 10 desktop for front-end skills tra
 **Email**: albertofrigatto.comercial@gmail.com
 
 **Linkedin**: [Click Here](https://www.linkedin.com/in/alberto-frigatto-a72022251)
+
 <br/>
 
 ## Start
 
 To start the project just click on `index.html`.
+
 <br/>
 
 ## package dependencies
